@@ -14,7 +14,7 @@ extern char** SLIB_args;
 extern size_t SLIB_args_len;
 void setup_slib_args(char** args, size_t args_len);
 int got_flag(const char* check);
-void get_pos_args(size_t start, char* pos_args[], byte* len);
+void get_pos_args(size_t start, char* pos_args[], size_t* len);
 
 
 #endif // SLIB_PROGRAM_H_

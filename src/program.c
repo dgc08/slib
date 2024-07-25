@@ -29,10 +29,17 @@ int got_flag(const char* check) {
     return in_str_vec(check, SLIB_args, SLIB_args_len);
 }
 
-void get_pos_args(size_t start, char* pos_args[], byte* len) {
-    /* Gets the first 255 positional arguments as array */
+void get_pos_args(size_t start, char* pos_args[], size_t* len) {
+    /* Gets the first len positional arguments as array in pos_args,
+     * which is initialised by the caller
+     *
+     * len will later on hold the index of the last element
+     *
+     * Make sure to set the len to the allocated length of memory or -1 for infinte space(UNSAFE)
+     * */
+    size_t max_len = *len;
     *len = 0;
-    while (start < SLIB_args_len && *len < 255) {
+    while (start < SLIB_args_len && *len < max_len) {
         if (SLIB_args[start][0] != '-') {
             pos_args[(*len)++] = SLIB_args[start];
         }
