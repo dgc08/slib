@@ -1,5 +1,5 @@
-#ifndef EXCEPTIONS_H_
-#define EXCEPTIONS_H_
+#ifndef SLIB_EXCEPTIONS_H_
+#define SLIB_EXCEPTIONS_H_
 
 typedef enum {
     SLIB_NoError,
@@ -14,4 +14,4 @@ void SLIB_try();
 Exception SLIB_except();
 char* SLIB_get_error_message();
 
-#endif // EXCEPTIONS_H_
+#endif // SLIB_EXCEPTIONS_H_
