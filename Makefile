@@ -1,6 +1,7 @@
+TEST_FLAGS = -a=omgFirstTryFeatureWorkingNoDebuggingILoveTheWorld 2ndFlag
 TARGET = slib_test
 
-SRC_DIRS = test/ lib/
+SRC_DIRS = test/ lib/slib/src
 
 CC = gcc
 CFLAGS = -I lib -Wall -Wextra -g
@@ -14,10 +15,10 @@ OBJS := $(patsubst %.c,$(OBJ_DIR)/%.o,$(SRCS))
 
 .PHONY: all test test_build clean
 
-all: test
+all: test test_build
 
 test: $(TARGET)
-	echo && ./$(TARGET)
+	echo && ./$(TARGET) $(TEST_FLAGS)
 
 test_build: $(TARGET)
 

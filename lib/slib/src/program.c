@@ -1,7 +1,8 @@
 #include "../program.h"
 #include "../types.h"
-#include <stdio.h>
 #include "../strings.h"
+
+#include <stdio.h>
 
 /* Command line argument stuff */
 
@@ -11,6 +12,15 @@ size_t SLIB_args_len;
 void setup_slib_args(char** args, const size_t args_len) {
     SLIB_args = (const char** )args;
     SLIB_args_len = args_len;
+}
+
+char* get_named_argument(const char* check) {
+    for (size_t i = 0; i < SLIB_args_len; i++) {
+        if (starts_with(SLIB_args[i], check)) {
+            return (char*) (SLIB_args[i] + strlen(check));
+        }
+    }
+    return NULL;
 }
 
 size_t got_flag(const char* check) {

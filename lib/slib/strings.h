@@ -1,6 +1,8 @@
 #ifndef SLIB_STRINGS_H_
 #define SLIB_STRINGS_H_
 
+#include <string.h>
+
 #include "./types.h"
 
 bool starts_with(const char *restrict string, const char *restrict prefix);

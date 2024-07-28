@@ -1,7 +1,11 @@
 #include "slib/exceptions.h"
+#include "slib/program.h"
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
+    setup_slib_args(argv, argc);
+    printf("Named: %s\n", get_named_argument("-a="));
+
     SLIB_try();
     throw_exception("hey", SLIB_OSError);
     int e = SLIB_except();
