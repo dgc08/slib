@@ -4,6 +4,8 @@
 typedef enum {
     SLIB_NoError,
     SLIB_OSError,
+    SLIB_OutOfBoundsError,
+    SLIB_MemoryError,
 } Exception;
 
 void throw_error(char* error_msg);
