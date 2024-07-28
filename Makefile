@@ -1,9 +1,9 @@
 TARGET = slib_test
 
-SRC_DIRS = test/ slib/
+SRC_DIRS = test/ lib/
 
 CC = gcc
-CFLAGS = -I . -Wall -Wextra -g
+CFLAGS = -I lib -Wall -Wextra -g
 
 SRCS := $(shell find $(SRC_DIRS) -name '*.c')
 
@@ -17,7 +17,7 @@ OBJS := $(patsubst %.c,$(OBJ_DIR)/%.o,$(SRCS))
 all: test
 
 test: $(TARGET)
-	./$(TARGET)
+	echo && ./$(TARGET)
 
 test_build: $(TARGET)
 
