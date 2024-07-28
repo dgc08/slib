@@ -1,7 +1,7 @@
 #include "../time.h"
 
-#include <time.h>
 #include <unistd.h>
+#include <time.h>
 
 void delay(float msecs) {
     usleep(msecs*1000);

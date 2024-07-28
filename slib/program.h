@@ -3,12 +3,7 @@
 
 #include "types.h"
 
-void throw_error(char* error_msg);
-void throw_error_errno(char* error_msg);
-
-
 size_t in_str_vec(const char* check, char** vec, size_t vec_len);
-
 
 extern char** SLIB_args;
 extern size_t SLIB_args_len;

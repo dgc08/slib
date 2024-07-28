@@ -1,5 +1,5 @@
 #include "../program.h"
-#include "lib/slib/types.h"
+#include "../types.h"
 #include <stdio.h>
 
 #include <string.h>
@@ -50,22 +50,4 @@ void get_pos_args(size_t start, char* pos_args[], size_t* len) {
         }
         start++;
     }
-}
-
-/* Error handling */
-
-#include <stdio.h>
-#include <errno.h>
-#include <stdlib.h>
-
-void throw_error_errno(char* error_msg) {
-    fprintf(stderr, "Excpetion in program, Error: ");
-    strerror(errno);
-    fprintf(stderr, "Error Message by Caller: %s\n", error_msg);
-    exit(1);
-}
-void throw_error(char* error_msg) {
-    fprintf(stderr, "Exception in program\n");
-    fprintf(stderr, "Error Message by Caller: %s\n", error_msg);
-    exit(1);
 }
